@@ -3,7 +3,7 @@
 %define release 9mdk
 
 Name: %{name}
-Summary: ax25spyd is a daemon that listens for AX.25 packets from the kernel-AX.25.
+Summary: ax25spyd is a daemon that listens for AX.25 packets from the kernel-AX.25
 Version: %{version}
 Release: %{release}
 Source: %{name}-%{version}.tar.bz2
