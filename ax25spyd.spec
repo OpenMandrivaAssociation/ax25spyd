@@ -1,6 +1,6 @@
 %define name ax25spyd
 %define version 0.23
-%define release 9mdk
+%define release  %mkrel 9
 
 Name: %{name}
 Summary: ax25spyd is a daemon that listens for AX.25 packets from the kernel-AX.25
