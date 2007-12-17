@@ -9,7 +9,6 @@ Release: %{release}
 Source: %{name}-%{version}.tar.bz2
 Group: System/Servers
 Url: http://1409.org/projects/ax25spyd.html
-BuildRoot: %{_tmppath}/%{name}-buildroot
 License: GPL
 Requires: libax25_0 >= 0.0.9 
 Buildrequires: libncurses-devel ax25-devel
