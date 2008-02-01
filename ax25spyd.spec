@@ -9,7 +9,6 @@ Group:		System/Servers
 URL:		http://1409.org/projects/ax25spyd.html
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 License:	GPLv2+
-Requires:	libax25_0 >= 0.0.9 
 BuildRequires:	libncurses-devel
 BuildRequires:	ax25-devel
 
