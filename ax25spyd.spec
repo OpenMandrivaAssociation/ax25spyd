@@ -23,10 +23,10 @@ They will get all heard AX.25-packets in a human-readable format, an
 mheard structure, DX-cluster messages or spydata.
 
 %prep
-rm -rf %{buildroot}
 %setup -q
 %patch0 -p1 -b .build
 %patch1 -p0 -b .strfmt
+
 %build
 %configure2_5x
 %make
@@ -46,9 +46,8 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
+%doc AUTHORS BUGS ChangeLog INSTALL README examples
 %{_bindir}/*
 %{_sbindir}/*
 %{_mandir}/*/*
 %{_sysconfdir}/ax25/*
-%doc AUTHORS BUGS ChangeLog INSTALL README examples
-
