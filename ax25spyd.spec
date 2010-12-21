@@ -2,11 +2,12 @@ Name:		ax25spyd
 Summary:	Daemon that listens for AX.25 packets from the kernel-AX.25
 Version:	0.23
 Release:	%mkrel 14
-Source:		%{name}-%{version}.tar.bz2
+Source:		http://linkt.de/ax25spyd/%{name}-%{version}.tar.bz2
 # From Debian: fixes build - AdamW 2008/01
 Patch0:		ax25spyd-0.23-build.patch
+Patch1:		ax25spyd-0.23-str_fmt.patch
 Group:		System/Servers
-URL:		http://1409.org/projects/ax25spyd.html
+URL:		http://linkt.de/ax25spyd/
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 License:	GPLv2+
 BuildRequires:	libncurses-devel
@@ -25,18 +26,20 @@ mheard structure, DX-cluster messages or spydata.
 rm -rf %{buildroot}
 %setup -q
 %patch0 -p1 -b .build
-%configure
-
+%patch1 -p0 -b .strfmt
 %build
+%configure2_5x
 %make
 
 %install
-%makeinstall
+rm -rf %{buildroot}
+%makeinstall_std
 
 mkdir -p %{buildroot}/%_sysconfdir/ax25
-mv %{buildroot}/%{_prefix}/etc/ax25/* %{buildroot}/%_sysconfdir/ax25/
+mv %{buildroot}/%{_prefix}/etc/ax25/* %{buildroot}/%{_sysconfdir}/ax25/
 
-rm -f $RPM_BUILD_DIR/%{name}-%{version}/examples/Makefile*
+#doc cleaning
+rm -f examples/Makefile*
 
 %clean
 rm -rf %{buildroot}
