@@ -1,0 +1,29 @@
+--- ax25spyd-0.23.orig/src/monix.c
++++ ax25spyd-0.23/src/monix.c
+@@ -140,7 +140,7 @@
+  *  dtype contains the type, transmitted by ax25spyd
+  */
+ {
+-	static bold=0;
++	static int bold=0;
+ 	unsigned char *p;
+ 	chtype ch;
+ 	int i, total;
+--- ax25spyd-0.23.orig/src/monixd.h
++++ ax25spyd-0.23/src/monixd.h
+@@ -44,7 +44,6 @@
+ 
+ 
+ /* in monixd */
+-extern struct t_client client[MAXCLIENTS];
+ extern int nClient ;
+ extern int fVerbose ;
+ extern int fForceNoKiss ;
+@@ -84,6 +83,7 @@
+     char *sHeaderFilter;
+ };
+ 
++extern struct t_client client[MAXCLIENTS];
+ 
+ 
+ /* In monixd.c */

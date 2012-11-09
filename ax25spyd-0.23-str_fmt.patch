@@ -1,0 +1,29 @@
+diff -p -up ./ltmain.sh.orig ./ltmain.sh
+--- ./ltmain.sh.orig	2010-12-21 16:43:42.000000000 +0100
++++ ./ltmain.sh	2010-12-21 16:43:42.000000000 +0100
+@@ -1,3 +1,4 @@
++link_all_deplibs=no
+ # ltmain.sh - Provide generalized library-building support services.
+ # Generated automatically from ltmain.in by configure.
+ # Copyright (C) 1996, 1997 Free Software Foundation, Inc.
+diff -p -up ./src/monix.c.orig ./src/monix.c
+--- ./src/monix.c.orig	2010-12-21 16:50:21.000000000 +0100
++++ ./src/monix.c	2010-12-21 16:55:18.000000000 +0100
+@@ -567,7 +567,7 @@ main(int argc, char **argv)
+ 	if( (fpRawPR = fopen(AX25VARDIR"/ax25spy", "r")) == NULL) {
+ 	    char buf[100];
+ 	    sprintf(buf, "cannot open "AX25VARDIR"/ax25spy: %d, %s\n",errno,strerror(errno));
+-	    syslog(LOG_ERR, buf);
++	    syslog(LOG_ERR, "%s", buf);
+ 	    fputs(buf, stderr);
+ 	    if( color ) endwin();
+ 	    exit(1); /* Naja */
+@@ -621,7 +621,7 @@ main(int argc, char **argv)
+ 	if( (fpRawPR = fopen(AX25VARDIR"/ax25spy", "w")) == NULL) {
+ 	    char buf[100];
+ 	    sprintf(buf, "cannot open "AX25VARDIR"/ax25spy: %d, %s\n",errno,strerror(errno));
+-	    syslog(LOG_ERR, buf);
++	    syslog(LOG_ERR, "%s", buf);
+ 	    fputs(buf, stderr);
+ 	    if( color ) endwin();
+ 	    exit(1); /* Naja */
