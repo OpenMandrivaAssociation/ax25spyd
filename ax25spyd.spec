@@ -1,7 +1,7 @@
 Name:		ax25spyd
 Summary:	Daemon that listens for AX.25 packets from the kernel-AX.25
 Version:	0.23
-Release:	15
+Release:	16
 Source:		http://linkt.de/ax25spyd/%{name}-%{version}.tar.bz2
 # From Debian: fixes build - AdamW 2008/01
 Patch0:		ax25spyd-0.23-build.patch
