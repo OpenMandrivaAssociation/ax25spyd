@@ -7,7 +7,7 @@ Source:		http://linkt.de/ax25spyd/%{name}-%{version}.tar.bz2
 Patch0:		ax25spyd-0.23-build.patch
 Patch1:		ax25spyd-0.23-str_fmt.patch
 Group:		System/Servers
-URL:		http://linkt.de/ax25spyd/
+URL:		https://linkt.de/ax25spyd/
 License:	GPLv2+
 BuildRequires:	pkgconfig(ncurses)
 BuildRequires:	ax25-devel
