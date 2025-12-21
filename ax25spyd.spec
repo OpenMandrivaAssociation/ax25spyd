@@ -9,6 +9,11 @@ Patch1:		ax25spyd-0.23-str_fmt.patch
 Group:		System/Servers
 URL:		https://linkt.de/ax25spyd/
 License:	GPLv2+
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(ncurses)
 BuildRequires:	ax25-devel
 
